@@ -1,0 +1,30 @@
+{
+  "name": "back_end",
+  "version": "1.0.0",
+  "description": "back end api for kombucha keeper app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/dalbiter/kombucha-keeper.git"
+  },
+  "keywords": [
+    "kombucha",
+    "jun",
+    "brew",
+    "tea",
+    "fermentation",
+    "black",
+    "tea",
+    "green",
+    "tea"
+  ],
+  "author": "Dan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dalbiter/kombucha-keeper/issues"
+  },
+  "homepage": "https://github.com/dalbiter/kombucha-keeper#readme"
+}
