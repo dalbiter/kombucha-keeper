@@ -4,6 +4,8 @@ const ExpressError = require("./expressError");
 
 const app = express();
 
+// parse request bodies for json
+app.use(express.json())
 app.use(morgan("dev"));
 
 app.get("/", (req, res) => {
