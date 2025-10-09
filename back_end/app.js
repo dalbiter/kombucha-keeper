@@ -5,7 +5,8 @@ const ExpressError = require("./expressError");
 const app = express();
 
 // parse request bodies for json
-app.use(express.json())
+app.use(express.json());
+
 app.use(morgan("dev"));
 
 app.get("/", (req, res) => {
@@ -14,14 +15,14 @@ app.get("/", (req, res) => {
 
 // General 404 error handler
 app.use((req, res, next) => {
-    const e = new ExpressError(404, "Oops there's nothing here!")
-    next(e);
+    const err = new ExpressError(404, "Oops there's nothing here!")
+    next(err);
 })
 
 // Generic error handler
-app.use((error, req, res, next) => {
-    let status = error.status || 500;
-    let msg = error.msg || "Internal server error";
+app.use((err, req, res, next) => {
+    let status = err.status || 500;
+    let msg = err.msg || "Internal server error";
 
     return res.status(status).json({
         error: { status, msg }
