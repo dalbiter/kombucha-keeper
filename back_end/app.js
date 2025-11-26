@@ -12,11 +12,6 @@ app.use(morgan("dev"));
 
 app.use("/users", userRoutes);
 
-
-// app.get("/", (req, res) => {
-//     res.send("The app is working");
-// });
-
 // General 404 error handler
 app.use((req, res, next) => {
     const err = new ExpressError(404, "Oops there's nothing here!")
