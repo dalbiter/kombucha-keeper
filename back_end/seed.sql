@@ -88,15 +88,15 @@ CREATE TABLE recipes
 CREATE TABLE recipe_flavorings
 (
     id SERIAL PRIMARY KEY,
-    recipe_id INTEGER NOT NULL REFERENCES recipes,
+    recipe_id INTEGER NOT NULL REFERENCES recipes ON DELETE CASCADE,
     flavoring_id INTEGER NOT NULL REFERENCES flavorings
 );
 
 CREATE TABLE brew_logs
 (
     id SERIAL PRIMARY KEY,
-    user_id INTEGER NOT NULL REFERENCES users,
-    recipe_id INTEGER NOT NULL REFERENCES recipes,
+    user_id INTEGER NOT NULL REFERENCES users ON DELETE CASCADE,
+    recipe_id INTEGER NOT NULL REFERENCES recipes ON DELETE CASCADE,
     brewed_on DATE NOT NULL,
     notes TEXT
 );
@@ -210,5 +210,5 @@ VALUES
 INSERT INTO brew_logs (user_id, recipe_id, brewed_on, notes)
 VALUES
     (1, 1, '11-11-2025', 'a bit sweet, maybe a little less honey to start next time'),
-    (2, 2, '10-10-2025', 'perfecto!')
+    (2, 2, '10-10-2025', 'perfecto!');
 
