@@ -1,11 +1,11 @@
 const express = require("express");
 const router = new express.Router();
-const TeaType = require("../models/teaType");
+const CarbonationMethod = require("../models/carbonationMethod");
 
 router.get("/", async (req, res, next) => {
     try {
-        let teaTypes = await TeaType.getAll();
-        return res.json({teaTypes});
+        let carbonationMethods = await CarbonationMethod.getAll();
+        return res.json({carbonationMethods});
     } catch (e) {
         return next (e);
     }
@@ -14,8 +14,8 @@ router.get("/", async (req, res, next) => {
 router.get("/:id", async (req, res, next) => {
     try{
         let {id} = req.params
-        let teaType = await TeaType.findById(id)
-        return res.json(teaType)
+        let carbonationMethod = await CarbonationMethod.findById(id)
+        return res.json(carbonationMethod)
     } catch(e) {
         return next(e);
     }

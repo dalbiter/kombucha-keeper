@@ -26,7 +26,7 @@ CREATE TABLE tea_types
 CREATE TABLE carbonation_methods
 (
     id SERIAL PRIMARY KEY,
-    method VARCHAR(50) UNIQUE NOT NULL
+    method_name VARCHAR(50) UNIQUE NOT NULL
 );
 
 CREATE TABLE sugar_sources
@@ -114,7 +114,7 @@ VALUES
     ('black tea', 'twinings');
 
 -- insert example carbonation methods
-INSERT INTO carbonation_methods (method)
+INSERT INTO carbonation_methods (method_name)
 VALUES
     ('bottle conditioned'),
     ('forced carbonation');
