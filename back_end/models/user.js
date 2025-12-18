@@ -21,7 +21,6 @@ class User {
         const users = results.rows.map(r => new User(
             r.id, r.username, r.first_name, r.last_name, r.email, r.role_choice, r.password_hash, r.created_at
         ))
-        console.log(users);
         return users;
     };
     static async findById(id){
@@ -32,6 +31,9 @@ class User {
             [id]    
             )
             const u = results.rows[0];
+            if(!u){
+                throw new ExpressError(404, "User not found")
+            }
             return new User(u.id, u.username, u.first_name, u.last_name, u.email, u.role_choice, u.password_hash, u.created_at)
     }
 };

@@ -1,7 +1,8 @@
 const express = require("express");
 const morgan = require("morgan");
 const ExpressError = require("./expressError");
-const userRoutes = require("./routes/userRoutes")
+const userRoutes = require("./routes/userRoutes");
+const teaTypeRoutes = require("./routes/teaTypeRoutes");
 
 const app = express();
 
@@ -11,6 +12,7 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 app.use("/users", userRoutes);
+app.use("/teaTypes", teaTypeRoutes);
 
 // General 404 error handler
 app.use((req, res, next) => {
