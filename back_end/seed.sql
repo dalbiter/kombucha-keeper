@@ -85,7 +85,7 @@ CREATE TABLE recipes
     created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
-CREATE TABLE recipe_flavorings
+CREATE TABLE recipes_flavorings
 (
     id SERIAL PRIMARY KEY,
     recipe_id INTEGER NOT NULL REFERENCES recipes ON DELETE CASCADE,
@@ -199,7 +199,7 @@ VALUES
     );
 
 -- insert example recipe_flavorings
-INSERT INTO recipe_flavorings (recipe_id, flavoring_id)
+INSERT INTO recipes_flavorings (recipe_id, flavoring_id)
 VALUES
     (1, 1),
     (2, 3),

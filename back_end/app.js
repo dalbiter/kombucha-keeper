@@ -4,9 +4,11 @@ const ExpressError = require("./expressError");
 const userRoutes = require("./routes/userRoutes");
 const teaTypeRoutes = require("./routes/teaTypeRoutes");
 const carbonationMethodRoutes = require("./routes/carbonationMethodRoutes");
-const sugarSourceRoutes = require("./routes/sugarSourceRoutes")
-const flavoringRoutes = require("./routes/flavoringRoutes")
-const recipeRoutes = require("./routes/recipeRoutes")
+const sugarSourceRoutes = require("./routes/sugarSourceRoutes");
+const flavoringRoutes = require("./routes/flavoringRoutes");
+const recipeRoutes = require("./routes/recipeRoutes");
+const recipeFlavoringRoutes = require("./routes/recipeFlavoringRoutes");
+const brewLogRoutes = require("./routes/brewLogRoutes");
 
 const app = express();
 
@@ -21,6 +23,8 @@ app.use("/carbonationMethods", carbonationMethodRoutes);
 app.use("/sugarSources", sugarSourceRoutes);
 app.use("/flavorings",flavoringRoutes);
 app.use("/recipes",recipeRoutes);
+app.use("/recipesFlavorings",recipeFlavoringRoutes);
+app.use("/brewLogs",brewLogRoutes);
 
 // General 404 error handler
 app.use((req, res, next) => {
