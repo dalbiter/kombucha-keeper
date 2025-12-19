@@ -5,6 +5,7 @@ const userRoutes = require("./routes/userRoutes");
 const teaTypeRoutes = require("./routes/teaTypeRoutes");
 const carbonationMethodRoutes = require("./routes/carbonationMethodRoutes");
 const sugarSourceRoutes = require("./routes/sugarSourceRoutes")
+const flavoringRoutes = require("./routes/flavoringRoutes")
 
 const app = express();
 
@@ -17,6 +18,7 @@ app.use("/users", userRoutes);
 app.use("/teaTypes", teaTypeRoutes);
 app.use("/carbonationMethods", carbonationMethodRoutes);
 app.use("/sugarSources", sugarSourceRoutes);
+app.use("/flavorings",flavoringRoutes);
 
 // General 404 error handler
 app.use((req, res, next) => {
